@@ -1,0 +1,134 @@
+OBJETIVOS DO JAVA
+PONTEIRO: Aponta onde aloca na memória
+GERENCIAMENTO DE MEMÓRIA: Pode colocar e retirar memória se quiser - Usado em servidores
+ORGANIZAÇÃO: Projetos organizados dentro do java - Compilado: fica mais rápido com mais aplicações
+CRIAÇÃO DE BIBLIOTECAS: Consegue criar bibliotecas
+CUSTO DE PROJETO: Caro pois há profissionais caros
+REESCRITA DE PROJETO: Peca na reescrita, é difícil criar ou reescrever de forma clara, reescrita de monolito é péssima
+*Monolito - sistema que é fixo, não há outras funções, construção difícil de entender. Tem objetivo de atender as necessidades apenas na hora.
+
+
+DADOS DE JAVA
+- Criado em 92 pela Sun, popularidade em 94 por conta da internet, crescimento forte de applets (compilador/transformador para a máquina entender o bytecode),
+- Thin client ("cliente magro" - acessar outra máquina)
+- Javafx (java de efeitos - cadastro de clientes na máquina - utilizado para intranet Ex: terminal financeiro Bradesco, só funcionava nas máquinas do banco).
+
+SSH - acessar diferentes máquinas conectadas na mesma rede
+
+MÁQUINA VIRTUAL
+Máquina que conversa com o computador e código, uma vez instalada, lê o bytecode
+CÓDIGO COMPILADO - bytecode: máquina virtual lê, pc executa - independente de SO
+INDEPENDENTE DE SO: pode-se criar código no windows e rodar no mac
+JAVAC: compilador java - pega as infos e cria as class (bytecode)
+JRE: Java Runtime Enterprise - contém JVM - executa o Java (bytecode)
+JDK: Kit para desenvolvimento Java - contém jre e javac)
+NEW - responsável por alocar um objeto dentro da JVM
+GARBAGE COLLECTOR: responsável por identificar os objetos fora de uso dentro da JVM e recolher. O tempo de identificação para objetos primitivos é mais lento pois pode ser alocado diretamente na memória, sem identificação de uso. (Eden, Elder, Oldest é a ordem)
+
+CASTING “FAZER CABER”
+- sabe o que vai caber, se não couber precisa fazer casting (byte cabe em double, mas double não cabe em byte - tipos de "caixas")
+
+CHAR SEMPRE SOFRE CASTING - CHAR VALE POR DOIS
+
+
+
+ORIENTAÇÃO AO OBJETO
+Ajuda na organização na hora de programar.
+Encapsulamento - proteção de dados.
+
+"new" - virtual
+"dados dtabela como int" - loca                 
+
+INSTANCIAR OBJETO
+Aloca espaço na memória virtual através de endereço físico
+
+------------------------------------------------------------------------------------------
+
+transferir e depositar
+
+class Conta {
+	int numero;
+	String titular;
+	double saldo;
+	void transferencia(double transferir) {
+		double para;thisSaldo - transferir; this=novoSaldo;
+	void depositar(double quantidade) {
+		double novoSaldo = this.saldo-quantidade;this.saldo=novoSaldo;
+	}
+}
+
+CLASSE
+É um tipo estruturado que pode conter (membros):
+- Atributos (dados)
+- Métodos (ações)
+
+A classe também pode prover construtores (métodos que iniciam/constroem uma classe), sobrecarga (quando há abstract, jé tem classe definida e ela carrega todos os dados dela = cópia), encapsulamento (forma de proteger os dados = colocar "private" dentro da classe, assim não tem como pegar sem instanciar), herança (método obtido de dentro de outra classe) e polimorfismo (duas classes iguais, porém com um método diferente ou adicional = pato).
+
+Todas as classes trabalham em conjunto, separadas para ajudar na manutenção e não criar códigos longos.
+
+Quando atuamos com classes, separar em pacotes (agrupamento lógico) é essencial para organizar e desenvolver as classes. Visualmente temos um sistema (conjunto de aplicações).
+
+*interface serve como caminho para a comunicação, porém se o código não estiver encapsulado significa que o código não é seguro
+
+ATRIBUTOS
+Restrições
+- não pode começar com dígito: usar letra ou _
+- não pode acentos
+- não pode espaço em brancos
+- use nomes (int salario/ int salarioDoFuncionario)
+
+Convenções
+- CamelCase: lastName
+pacotes, atributos, métodos, variáveis e parâmetros
+
+- Pascal Case: ProductService
+classes (ContaUsuario)
+
+Construtor define que ao começar uma instância, precisa criar algo. (Ex: conta - precisa de nome e saldo)
+
+OPERAÇÕES LÓGICAS
+E (&&): Para ser executado, as duas expressões tem que ser verdadeiras. 
+OU (II): Para ser executado, apenas uma condição precisa ser verdadeira.
+NEGAÇÃO (!) - INVERTE O VALOR: Para ser executado, apenas uma condição seja verdadeira.
+BITWISE E(&): Se um valor for falso, o resultado da expressão também será falso.
+BITWISE OU(I): Resulta em verdadeiro caso ao menos um dos valores considerados seja verdadeiro.
+OU EXCLUSIVO - XOR(^): Ela tem duas entradas e uma saída. Para duas entradas, a saída será verdadeira se uma e apenas uma das entradas for verdadeira. Se ambas as entradas forem falsas (0) ou ambas forem verdadeiras (1), a saída será falsa (0).
+*boolean, só pode uma saída, se ambas forem 1, retorna 0, se ambas forem 0, retorna 0
+
+*bitwise carrega na memória, verifica TODOS os valores antes de falar se é F/V
+*normal valida se F/V, ao verificar falso, ele para e informa que é falso sem analisar os outros
+*difícil ter ou no bitwise, pois sugere alternativa excludente (se o primeiro é verdade, já exclui o falso)
+
+STRING
+Formatar: toLowerCase(deixa minúsculo), to UpperCase(deixa maiúsculo), trim(tira espaços em branco no início e fim)
+Recortar: substRing(pega início ou fim)
+Substituir: replace(troca char, troca letras de lugar, ou strings)
+Buscar: IndexOf, LastIndexOf (conta lugar da letra)
+Split: str.Slip(" ") - transforma linha única em duas linhas Raquel Carvalho para um embaixo da outra
+
+Comentários - início /* fim */ - bloco de comentário - única linha // 
+
+CONSTRUTORES
+Operação especial de uma classe, executado na instanciação do objeto
+Usos comuns: iniciar valores aos atributos, permitir ou obrigar que o objeto receba dados/dependências no momento da instanciação (injeção de dependência)
+Se não for especificado, a classe disponibiliza o padrão: Conta conta=new Conta(); "o () é o construtor"
+
+TODO OBJETO TEM UM CONSTRUTOR - DEFAULT - SE CRIAR CONSTRUTOR, TEM QUE SER ÚNICO 
+
+THIS
+É uma referência para o próprio objeto. Usos comuns: diferenciar atributos de variáveis locais, passar o próprio objeto como argumento na chamada de um método ou construtor.
+
+SOBRECARGA
+É um recurso que uma classe possui de oferecer mais de uma operação com o mesmo nome, porém com diferentes listas de parâmetros.
+
+ENCAPSULAMENTO
+É um princípio que consiste em esconder detalhes de implementação de uma classe, expondo apenas operações seguras e que mantenham os objetos em um estado consistente.
+**Regra de ouro: o objeto deve sempre estar em um estado consistente, e a própria classe deve garantir isso.
+Um objeto não pode expor nenhum atributo, atributos devem ser acessados através de get e set.
+
+MODIFICADORES DE ACESSO
+PRIVATE: o membro só pode ser acessado na própria classe
+(NADA): o membro só pode ser acessado nas classes do mesmo pacote
+PROTECTED: o membro só pode ser acessado no mesmo pacote, bem como em subclasses de pacotes diferentes
+PUBLIC: o membro é acessado por todas classes (ao menos que ele resida em um módulo diferente que não importe o pacote onde ele está).
+
