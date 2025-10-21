@@ -1,0 +1,385 @@
+package aplicacao;
+
+
+import java.util.Scanner;
+
+
+import modelo.Cliente;
+import modelo.Produto;
+
+
+public class LojaRoupas {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        // Entrada de dados do cliente
+
+
+        System.out.println("Digite os dados do cliente:");
+        System.out.print("Nome: ");
+        String nomeCliente = scanner.nextLine();
+
+
+        System.out.print("Endere�o: ");
+        String endereco = scanner.nextLine();
+
+
+        System.out.print("Telefone: ");
+        String telefone = scanner.nextLine();
+
+
+        System.out.print("Email: ");
+        String email = scanner.nextLine();
+
+
+        System.out.print("Idade: ");
+        int idade = scanner.nextInt();
+        scanner.nextLine(); // Consumir a quebra de linha
+
+
+        System.out.print("G�nero: ");
+        String genero = scanner.nextLine();
+
+
+        System.out.print("CPF: ");
+        String cpf = scanner.nextLine();
+
+
+        System.out.print("Data de Nascimento (dd/MM/yyyy): ");
+        String dataNascimento = scanner.nextLine();
+
+
+        Cliente cliente = new Cliente(nomeCliente, endereco, telefone, email, idade, genero, cpf, dataNascimento);
+
+
+        System.out.println("\nDigite os dados do produto:");
+        System.out.print("Nome do Produto: ");
+        String nomeProduto = scanner.nextLine();
+
+
+        System.out.print("Pre�o do Produto: ");
+        double preco = scanner.nextDouble();
+        scanner.nextLine();
+
+
+        System.out.print("Tamanho do Produto: ");
+        String tamanho = scanner.nextLine();
+
+
+        System.out.print("Cor do Produto: ");
+        String cor = scanner.nextLine();
+
+
+        System.out.print("C�digo do Produto: ");
+        int codigoProduto = scanner.nextInt();
+
+
+        System.out.print("Quantidade em Estoque: ");
+        int estoque = scanner.nextInt();
+        scanner.nextLine(); // Consumir a quebra de linha
+
+
+        System.out.print("Marca do Produto: ");
+        String marca = scanner.nextLine();
+
+
+        System.out.print("Categoria do Produto: ");
+        String categoria = scanner.nextLine();
+
+
+        // Cria��o da inst�ncia Produto
+
+
+        Produto produto = new Produto(nomeProduto, preco, tamanho, cor, codigoProduto, estoque, marca, categoria);
+
+
+        // Simulando a compra
+        System.out.print("\nQuantos itens deste produto deseja comprar? ");
+        int quantidadeCompra = scanner.nextInt();
+
+
+        if (quantidadeCompra <= produto.getEstoque()) {
+            produto.removerProdutoEstoque(quantidadeCompra);
+            System.out.println("\nCompra realizada com sucesso!");
+
+
+            // Exibindo os detalhes da compra
+            System.out.println("\n=== Detalhes da Compra ===");
+            System.out.println("Cliente: " + cliente.toString());
+            System.out.println("Produto adquirido: " + produto.toString());
+            System.out.println("Quantidade comprada: " + quantidadeCompra);
+            System.out.println("Valor total da compra: R$ " + (quantidadeCompra * produto.getPreco()));
+        } else {
+            System.out.println("\nQuantidade em estoque insuficiente para a compra.");
+        }
+
+
+        scanner.close();
+    }
+
+
+}
+// PACOTE MODELO
+package modelo;
+
+
+public class Produto {
+
+
+    String nome;
+    double preco;
+    String tamanho;
+    String cor;
+    int codigoProduto;
+    int estoque;
+    String marca;
+    String categoria;
+
+
+    // Construtor
+    public Produto(String nome, double preco, String tamanho, String cor, int codigoProduto, int estoque, String marca, String categoria) {
+        this.nome = nome;
+        this.preco = preco;
+        this.tamanho = tamanho;
+        this.cor = cor;
+        this.codigoProduto = codigoProduto;
+        this.estoque = estoque;
+        this.marca = marca;
+        this.categoria = categoria;
+    }
+
+
+    // M�todos para manipular o estoque
+    public void adicionarProdutoEstoque(int quantidade) {
+        if (quantidade > 0) {this.estoque += quantidade;
+        }
+    }
+
+
+    public void removerProdutoEstoque(int quantidade) {
+        if (quantidade > 0 && quantidade <= this.estoque) {this.estoque -= quantidade;
+        }
+    }
+
+
+    // M�todo toString para exibir todos os campos do objeto
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", preco=" + preco +
+                ", tamanho='" + tamanho + '\'' +
+                ", cor='" + cor + '\'' +
+                ", codigoProduto=" + codigoProduto +
+                ", estoque=" + estoque +
+                ", marca='" + marca + '\'' +
+                ", categoria='" + categoria + '\'' +
+                '}';
+    }
+
+
+    // Getters e Setters (opcional)
+    public String getNome() {
+        return nome;
+    }
+
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    public double getPreco() {
+        return preco;
+    }
+
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+
+
+    public String getTamanho() {
+        return tamanho;
+    }
+
+
+    public void setTamanho(String tamanho) {
+        this.tamanho = tamanho;
+    }
+
+
+    public String getCor() {
+        return cor;
+    }
+
+
+    public void setCor(String cor) {
+        this.cor = cor;
+    }
+
+
+    public int getCodigoProduto() {
+        return codigoProduto;
+    }
+
+
+    public void setCodigoProduto(int codigoProduto) {
+        this.codigoProduto = codigoProduto;
+    }
+
+
+    public int getEstoque() {
+        return estoque;
+    }
+
+
+    public void setEstoque(int estoque) {
+        this.estoque = estoque;
+    }
+
+
+    public String getMarca() {
+        return marca;
+    }
+
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+}
+// PACOTE CLIENTE
+package modelo;
+
+
+public class Cliente {
+    String nome;
+    String endereco;
+    String telefone;
+    String email;
+    int idade;
+    String genero;
+    String cpf;
+    String dataNascimento;
+
+
+    // Construtor
+    public Cliente(String nome, String endereco, String telefone, String email, int idade, String genero, String cpf, String dataNascimento) {
+        this.nome = nome;
+        this.endereco = endereco;
+        this.telefone = telefone;
+        this.email = email;
+        this.idade = idade;
+        this.genero = genero;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+    }
+
+
+    // Método toString para exibir todos os campos do objeto
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "nome='" + nome + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", email='" + email + '\'' +
+                ", idade=" + idade +
+                ", genero='" + genero + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                '}';
+    }
+
+
+    // Getters e Setters (opcional)
+    public String getNome() {
+        return nome;
+    }
+
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+
+    public String getEmail() {
+        return email;
+    }
+
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+
+    public int getIdade() {
+        return idade;
+    }
+
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+
+    public String getGenero() {
+        return genero;
+    }
+
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+
+    public String getCpf() {
+        return cpf;
+    }
+
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+
+    public String getDataNascimento() {
+        return dataNascimento;
+    }
+
+
+    public void setDataNascimento(String dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+}
