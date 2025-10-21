@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Kendrick acaba com Drake </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, nav, footer, section, article, aside {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #e73838;
+            border: 1px solid #e73838;
+        }
+        nav a {
+            text-decoration: none;
+            margin-right: 10px;
+        }
+        .imagem {
+            max-width: 100%;
+            height: auto;
+        }
+        nav{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Biografia</a>
+        <a href="#">Discografia</a>
+        <a href="#">Contato</a>
+    </nav>
+
+
+    <header>
+        <h1>Quem é Kendrick Lamar?</h1>
+        <p>Kendrick Lamar Duckworth (Compton, 17 de junho de 1987), mais conhecido como Kendrick Lamar, é um rapper, cantor, compositor, produtor de discos e diretor considerado como um dos artistas mais influentes de sua geração, além de um dos maiores rappers e letristas de todos os tempos.</p>
+    </header>
+   
+    <section>
+        <h2>Drake e J.Cole vs Kendrick</h2>
+        <p>Drake e J. Cole lançaram a música "First Person Shooter" dizendo que eles junto ao Kendrick eram o "BIG THREE" mas logo Kendrick respondeu que não existe "Big Three" e sim "It's just big ME".</p>
+        <article>
+            <h3>Título do Artigo</h3>
+            <p>Conteúdo do Artigo.</p>
+            <footer>
+                <p>Autor do Artigo</p>
+            </footer>
+        </article>
+        <aside>
+            <h3>Barra Lateral</h3>
+            <p>Conteúdo da Barra Lateral.</p>
+        </aside>
+    </section>
+   
+
+
+    <!-- Tags de Texto -->
+    <p>Este é um parágrafo.</p>
+    <b>Texto em negrito</b>
+    <i>Texto em itálico</i>
+    <u>Texto sublinhado</u>
+    <strong>Texto importante</strong>
+    <em>Texto enfatizado</em>
+    <code>Código</code>
+    <pre>Texto pré-formatado</pre>
+    <blockquote>Citação em bloco</blockquote>
+    <cite>Título citado</cite>
+    <q>Citação curta em linha</q>
+    <sub>Texto subscrito</sub>
+    <sup>Texto sobrescrito</sup>
+
+
+    <!-- Tags de Imagem -->
+    <img src="imagem.jpg" alt="Descrição da Imagem" class="imagem">
+
+
+    <!-- Tags de Formulário -->
+    <form action="/submit" method="post">
+        Nome: <input type="text" name="nome"><br>
+        E-mail: <input type="email" name="email"><br>
+        <input type="submit" value="Enviar">
+    </form>
+    <input type="text" name="username">
+    <textarea name="mensagem" rows="4" cols="50">Escreva sua mensagem aqui.</textarea>
+    <button type="submit">Enviar</button>
+    <select name="carro">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+    </select>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome">
+    <fieldset>
+        <legend>Informações Pessoais:</legend>
+        Nome: <input type="text" name="nome"><br>
+        Email: <input type="email" name="email"><br>
+    </fieldset>
+
+
+    <!-- Tags de Mídia -->
+    <iframe src="https://www.youtube.com/watch?v=T6eK-2OQtew" width="600" height="400"></iframe>
+    <audio controls>
+        <source src="musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+    <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+    </video>
+    <source src="movie.mp4" type="video/mp4">
+    <track src="legendas.vtt" kind="subtitles" srclang="en" label="English">
+
+
+    <!-- Outras Tags -->
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ol>
+    <table>
+        <tr>
+            <th>Cabeçalho 1</th>
+            <th>Cabeçalho 2</th>
+        </tr>
+        <tr>
+            <td>Dado 1</td>
+            <td>Dado 2</td>
+        </tr>
+    </table>
+    <hr>
+    <br>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <noscript>Este site requer JavaScript para funcionar corretamente.</noscript>
+    <canvas></canvas>
+    <svg width="100" height="100">
+        <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+    <map name="mapa">
+        <area shape="rect" coords="0,0,82,126" href="sol.htm" alt="Sol">
+        <area shape="circle" coords="90,58,3" href="mercurio.htm" alt="Mercúrio">
+        <area shape="circle" coords="124,58,8" href="venus.htm" alt="Vênus">
+    </map>
+    <meter value="2" min="0" max="10">2 out of 10</meter>
+    <progress value="22" max="100">22%</progress>
+    <ruby>漢 <rt>kan</rt> 字 <rt>ji</rt></ruby>
+    <details>
+        <summary>Mais Informações</summary>
+        <p>Detalhes adicionais</p>
+    </details>
+    <dialog open>Este é um diálogo.</dialog>
+    <figure>
+        <img src="imagens/imagem1.jpg" alt="Descrição da Imagem">
+        <figcaption>Aqui podemos ver um calango</figcaption>
+    </figure>
+    <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+    </datalist>
+    <optgroup label="Grupos">
+        <option value="Opção 1">Opção 1</option>
+        <option value="Opção 2">Opção 2</option>
+    </optgroup>
+    <output for="x" name="result">10</output>
+    <time datetime="2024-05-16T19:00:00Z">16 de Maio de 2024</time>
+    <mark>Texto Marcado</mark>
+    <wbr>Este é um <wbr> texto que pode ser quebrado em várias linhas.
+    <bdo dir="rtl">Texto Invertido</bdo>
+    <button>Botão</button>
+    <area shape="rect" coords="34,44,270,350" href="example.com">
+    <font size="3" color="red">Texto com Tamanho e Cor de Fonte</font>
+    <menu>
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </menu>
+    <spacer type="horizontal" size="50">
+    <noframes>Conteúdo Alternativo</noframes>
+    <frame src="page.html">
+    <frameset cols="25%,75%">
+        <frame src="frame1.htm">
+        <frame src="frame2.htm">
+    </frameset>
+    <isindex>
+        <footer>
+            <p>&copy; 2024 Meu Site com 100 Tags HTML</p>
+        </footer>
+</body>
+</html>
